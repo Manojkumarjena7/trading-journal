@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --background: 247 244 239;
+  --foreground: 26 22 18;
+  --card: 255 255 255;
+  --card-foreground: 26 22 18;
+  --muted: 240 236 229;
+  --muted-foreground: 90 82 72;
+  --border: 221 216 207;
+  --loss: 176 48 32;
+  --gain: 26 107 60;
+  --amber: 150 112 10;
+}
+
+.dark {
+  --background: 13 13 13;
+  --foreground: 240 235 224;
+  --card: 20 18 16;
+  --card-foreground: 240 235 224;
+  --muted: 26 23 20;
+  --muted-foreground: 110 100 88;
+  --border: 46 42 37;
+  --loss: 192 57 43;
+  --gain: 30 132 73;
+  --amber: 212 160 23;
+}
+
+.journal {
+  --background: 28 24 18;
+  --foreground: 220 200 170;
+  --card: 34 28 20;
+  --card-foreground: 220 200 170;
+  --muted: 40 33 24;
+  --muted-foreground: 140 120 90;
+  --border: 60 50 35;
+  --loss: 200 80 60;
+  --gain: 80 140 90;
+  --amber: 200 160 60;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(var(--background));
+  color: rgb(var(--foreground));
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.text-loss { color: rgb(var(--loss)); }
+.text-gain { color: rgb(var(--gain)); }
+.text-amber { color: rgb(var(--amber)); }
+.bg-loss-subtle { background-color: rgba(var(--loss), 0.08); }
+.border-loss { border-color: rgba(var(--loss), 0.30); }
+.bg-card { background-color: rgb(var(--card)); }
+.text-muted { color: rgb(var(--muted-foreground)); }
+.border-default { border-color: rgb(var(--border)); }
+
+.font-mono { font-family: ui-monospace, "SF Mono", "Cascadia Code", "Courier New", monospace; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgb(var(--border)); border-radius: 3px; }
+
+/* Nav scroll hide */
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { scrollbar-width: none; }
