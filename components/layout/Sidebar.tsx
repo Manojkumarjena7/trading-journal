@@ -1,5 +1,6 @@
 "use client";
 
+import ThemeToggle from "@/components/ThemeToggle";
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -89,14 +90,19 @@ return (
 className={`sticky top-0 h-screen overflow-y-auto sidebar-scroll border-r border-default bg-gradient-to-b from-card to-muted/20 transition-all duration-300 ${
         collapsed
           ? "w-16 min-w-16 p-2"
-          : "w-56 min-w-56 p-3"
+          : "w-64 min-w-64 p-3"
       }`}
 >
 {/* Toggle */}
-<button
-onClick={() => setCollapsed(!collapsed)}
-className="mb-4 flex items-center justify-center w-8 h-8 rounded-lg hover:bg-muted/10 transition"
-> <Menu size={18} /> </button>
+<div className="flex items-center justify-between mb-4">
+  <button
+    onClick={() => setCollapsed(!collapsed)}
+  >
+    <Menu size={18} />
+  </button>
+
+  {!collapsed && <ThemeToggle />}
+</div>
 
 
   {/* Collapsed Logo */}

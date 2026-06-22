@@ -1,29 +1,49 @@
 @import "tailwindcss";
 
 :root {
-  --background: 247 244 239;
-  --foreground: 26 22 18;
-  --card: 255 255 255;
-  --card-foreground: 26 22 18;
+  --background: 247 244 237;
+  --foreground: 28 32 44;
+
+  --card: 255 252 247;
+  --card-foreground: 28 32 44;
+
   --muted: 240 236 229;
   --muted-foreground: 90 82 72;
+
   --border: 221 216 207;
-  --loss: 176 48 32;
-  --gain: 26 107 60;
-  --amber: 150 112 10;
+
+  --loss: 185 48 48;
+  --gain: 16 128 88;
+  --amber: 180 120 20;
+}
+
+///light///
+
+.light {
+  --background: 247 244 237;     /* warm cream */
+  --card: 255 252 247;           /* soft white */
+  --foreground: 28 32 44;
+
+  --border: 220 213 201;
+  --muted: 107 114 128;
+  --muted-foreground: 107 114 128;
+
+  --loss: 185 48 48;
+  --gain: 16 128 88;
+  --amber: 180 120 20;
 }
 
 .dark {
-  --background: 15 23 42;
+  --background: 7 13 28;
   --foreground: 241 245 249;
 
-  --card: 30 41 59;
+  --card: 15 23 42;
   --card-foreground: 241 245 249;
 
-  --muted: 51 65 85;
+  --muted: 30 41 59;
   --muted-foreground: 148 163 184;
 
-  --border: 71 85 105;
+  --border: 51 65 85;
 
   --loss: 248 113 113;
   --gain: 74 222 128;
@@ -31,18 +51,18 @@
 }
 
 .journal {
-  --background: 15 23 42;
+  --background: 3 7 18;
   --foreground: 248 250 252;
 
-  --card: 30 41 59;
+  --card: 8 16 35;
   --card-foreground: 248 250 252;
 
-  --muted: 51 65 85;
+  --muted: 15 23 42;
   --muted-foreground: 148 163 184;
 
-  --border: 71 85 105;
+  --border: 30 41 59;
 
-  --loss: 248 113 113;
+  --loss: 255 99 99;
   --gain: 34 197 94;
   --amber: 250 204 21;
 }

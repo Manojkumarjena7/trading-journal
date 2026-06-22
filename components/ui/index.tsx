@@ -40,7 +40,7 @@ export function MetricCard({
   };
 
   return (
-    <div className="bg-card border border-default rounded-2xl shadow-sm rounded-xl p- shadow-sm hover:border-red-500/30 transition-all">
+    <div className="bg-card border border-default rounded-2xl p-5 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
       <div className="flex items-center gap-2 mb-2">
         <span className="text-xs font-medium uppercase text-muted">
           {label}
