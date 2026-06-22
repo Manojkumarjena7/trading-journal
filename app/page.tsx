@@ -3,14 +3,14 @@ import { Badge } from "@/components/ui/index";
 import Link from "next/link";
 
 export default function RealityPage() {
-  const equivalents = [
-    { num: "23.7", label: "Months of rent", sub: "@ ₹12,000/month" },
-    { num: "19", label: "Months of salary", sub: "@ ₹15,000/month" },
-    { num: "1,139", label: "Restaurant meals", sub: "@ ₹250 each" },
-    { num: "570", label: "Delivery orders", sub: "@ ₹500 each" },
-    { num: "3.8", label: "Years of savings", sub: "@ ₹6,200/month" },
-    { num: "1,271+", label: "Individual trades placed", sub: "Upstox only — all net negative" },
-  ];
+  const highlights = [
+  { num: "₹2,84,893", label: "Total Net Loss", sub: "All platforms combined" },
+  { num: "₹87,034", label: "Total Charges", sub: "Brokerage, GST, STT & fees" },
+  { num: "1,271+", label: "Trades Recorded", sub: "Verified Upstox records" },
+  { num: "3", label: "Platforms Analyzed", sub: "Upstox, Delta, Paytm" },
+  { num: "4", label: "Years Tracked", sub: "2022 – 2026" },
+  { num: "100%", label: "Audit Transparency", sub: "Source files verified" },
+];
 
   return (
     <div className="min-h-[calc(100vh-44px)] flex flex-col justify-center px-5 py-16 relative overflow-hidden">
@@ -79,7 +79,7 @@ export default function RealityPage() {
             border: "1px solid rgb(var(--border))",
           }}
         >
-          {equivalents.map((eq) => (
+          {highlights.map((eq) => (
             <div key={eq.label} className="bg-card px-5 py-4">
               <span
                 className="font-mono font-bold text-3xl block mb-1"

@@ -41,7 +41,7 @@ export function Navbar() {
     >
       {/* Brand */}
       <span className="font-mono text-[10px] tracking-widest text-loss uppercase px-3 whitespace-nowrap border-r border-default mr-2 py-3 flex-shrink-0">
-        📉 Trading Journal
+        Trading Journal by SivamTech
       </span>
 
       {/* Links */}

@@ -18,15 +18,6 @@ export function Badge({ level }: { level: ConfidenceLevel }) {
 // ============================================================
 // METRIC CARD
 // ============================================================
-interface MetricCardProps {
-  label: string;
-  value: string;
-  sub?: string;
-  variant?: "loss" | "gain" | "neutral" | "amber";
-  badge?: ConfidenceLevel;
-  size?: "sm" | "md" | "lg";
-}
-
 export function MetricCard({
   label,
   value,
@@ -43,29 +34,31 @@ export function MetricCard({
   };
 
   const valueSizes = {
-    sm: "text-lg",
-    md: "text-2xl",
-    lg: "text-3xl",
+    sm: "text-xl",
+    md: "text-3xl",
+    lg: "text-5xl",
   };
 
   return (
-    <div className="bg-card border border-default p-5 hover:opacity-90 transition-opacity">
-      <span className="font-mono text-[10px] tracking-widest uppercase text-muted block mb-2">
-        {label}
-        {badge && (
-          <span className="ml-1.5">
-            <Badge level={badge} />
-          </span>
-        )}
-      </span>
+    <div className="bg-card border border-default rounded-2xl shadow-sm rounded-xl p- shadow-sm hover:border-red-500/30 transition-all">
+      <div className="flex items-center gap-2 mb-2">
+        <span className="text-xs font-medium uppercase text-muted">
+          {label}
+        </span>
+
+        {badge && <Badge level={badge} />}
+      </div>
+
       <div
-        className={`font-mono font-bold leading-none mb-1 ${valueColors[variant]} ${valueSizes[size]}`}
-        style={{ color: variant === "loss" ? "rgb(var(--loss))" : variant === "gain" ? "rgb(var(--gain))" : variant === "amber" ? "rgb(var(--amber))" : undefined }}
+        className={`font-bold leading-none mb-2 ${valueColors[variant]} ${valueSizes[size]}`}
       >
         {value}
       </div>
+
       {sub && (
-        <p className="font-mono text-[11px] text-muted leading-snug mt-1">{sub}</p>
+        <p className="text-sm text-muted">
+          {sub}
+        </p>
       )}
     </div>
   );
@@ -128,23 +121,28 @@ export function SectionHeader({
   subtitle?: string;
 }) {
   return (
-    <div className="mb-6">
-      <p
-        className="font-mono text-[10px] tracking-[0.22em] uppercase mb-2"
-        style={{ color: "rgb(var(--loss))" }}
+    <div className="mb-8">
+      {index && (
+        <p className="text-sm font-medium mb-2 text-loss">
+          {index}
+        </p>
+      )}
+
+      <h1
+        className="text-4xl font-bold mb-2"
+        style={{ color: "rgb(var(--foreground))" }}
       >
-        {index}
-      </p>
-      <h1 className="text-2xl md:text-3xl font-light mb-1" style={{ color: "rgb(var(--foreground))" }}>
         {title}
       </h1>
+
       {subtitle && (
-        <p className="text-sm text-muted mt-1">{subtitle}</p>
+        <p className="text-base text-muted">
+          {subtitle}
+        </p>
       )}
     </div>
   );
 }
-
 // ============================================================
 // FINDING CARD (Mistakes / Audit)
 // ============================================================
@@ -185,7 +183,7 @@ export function FindingCard({
 // ============================================================
 export function PageWrapper({ children }: { children: React.ReactNode }) {
   return (
-    <div className="max-w-6xl mx-auto px-5 py-16 animate-fade-in">{children}</div>
+    <div className="w-full px-4 py-6 animate-fade-in">{children}</div>
   );
 }
 
