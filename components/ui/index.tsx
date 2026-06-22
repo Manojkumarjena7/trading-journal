@@ -1,3 +1,4 @@
+
 import { CONFIDENCE_CONFIG, ConfidenceLevel } from "@/lib/utils";
 
 // ============================================================
@@ -18,6 +19,19 @@ export function Badge({ level }: { level: ConfidenceLevel }) {
 // ============================================================
 // METRIC CARD
 // ============================================================
+// ============================================================
+// METRIC CARD
+// ============================================================
+
+interface MetricCardProps {
+  label: string;
+  value: string;
+  sub?: string;
+  variant?: "loss" | "gain" | "neutral" | "amber";
+  badge?: ConfidenceLevel;
+  size?: "sm" | "md" | "lg";
+}
+
 export function MetricCard({
   label,
   value,
@@ -32,7 +46,6 @@ export function MetricCard({
     neutral: "text-foreground",
     amber: "text-amber",
   };
-
   const valueSizes = {
     sm: "text-xl",
     md: "text-3xl",
